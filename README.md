@@ -1,4 +1,4 @@
-# Big Data Project: Real-Time Twitter Sentiment Analysis
+# Big Data Project : Real-Time Twitter Sentiment Analysis
 
 ## Overview
 
