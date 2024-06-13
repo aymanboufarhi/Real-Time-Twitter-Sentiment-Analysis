@@ -8,7 +8,7 @@ nltk.download('punkt')
 # from pymongo import MongoClient
 
 # import os
-# print(" the model is exist : ", os.path.exists("../logistic_regression_model.pkl"))
+# print(" the model is exist : ", os.path.exists("logistic_regression_model.pkl"))
 
 # Establish connection to MongoDB
 # client = MongoClient('localhost', 27017)
@@ -24,7 +24,7 @@ spark = SparkSession.builder \
 # print(" the model is exist : ", os.path.exists("../logistic_regression_model.pkl"))
 
 # Load the model
-pipeline = PipelineModel.load("../logistic_regression_model.pkl")
+pipeline = PipelineModel.load("logistic_regression_model.pkl")
 
 def clean_text(text):
     if text is not None:

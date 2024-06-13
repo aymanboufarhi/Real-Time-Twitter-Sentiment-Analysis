@@ -1,8 +1,8 @@
-# Big Data Project : Real-Time Twitter Sentiment Analysis
+# Big Data Project: Real-Time Twitter Sentiment Analysis Using Kafka, Spark (MLLib & Streaming), MongoDB and Django.
 
 ## Overview
 
-This repository contains a Big Data project focused on real-time sentiment analysis of Twitter data. The project leverages various technologies to collect, process, analyze, and visualize sentiment data from tweets in real-time.
+This repository contains a Big Data project focused on real-time sentiment analysis of Twitter data (classification of tweets). The project leverages various technologies to collect, process, analyze, and visualize sentiment data from tweets in real-time.
 
 ## Project Architecture
 
@@ -12,6 +12,7 @@ The project is built using the following components:
 - **Spark Streaming**: Processes the streaming data from Kafka to perform sentiment analysis.
 - **MongoDB**: Stores the processed sentiment data.
 - **Django**: Serves as the web framework for building a real-time dashboard to visualize the sentiment analysis results.
+- **chart.js** & **matplotlib** : for plotting.
 
 - This is the project plan :
    ![project img](imgs/flow.png)
@@ -43,8 +44,10 @@ https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis
 
 - **Django-Dashboard** : this folder contains Dashboard Django Application
 - **Kafka-PySpark** : this folder contains kafka provider and pyspark streaming (kafka consumer).
+- **ML PySpark Model** : this folder contains the trained model with jupyter notebook and datasets.
 - **zk-single-kafka-single.yml** : Download and install Apache Kafka in docker.
 - **bigdataproject rapport** : a brief report about the project (in french).
+
 
 ## Getting Started
 
@@ -64,7 +67,7 @@ To run this project, you will need the following installed on your system:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/drisskhattabi6/Real-Time-Twitter-Sentiment-Analysis.git
-   cd big-data-project
+   cd Real-Time-Twitter-Sentiment-Analysis
    ```
    
 2. **Installing Docker Desktop**
@@ -77,7 +80,6 @@ To run this project, you will need the following installed on your system:
 
 5. **Set up MongoDB**:
    - Download and install MongoDB.
-   - Start the MongoDB server.
      - It is recommended to install also **MongoDBCompass** to visualize data and makes working with mongodb easier.
 
 6. **Install Python dependencies**:
@@ -89,12 +91,13 @@ To run this project, you will need the following installed on your system:
 ### Running the Project
 
    Note : you will need MongoDB for Running the Kafka and Spark Streaming application and for Running Django Dashboard application.
--> **Start MongoDB**:
-   - using command line :
-   ```bash
-   mongod
-   ```
-   - or using **MongoDBCompass** (Recommended).
+   
+   - **Start MongoDB**:
+      - using command line :
+      ```bash
+      sudo systemctl start mongod
+      ```
+      - then use **MongoDBCompass** (Recommended).
 
 #### Running the Kafka and Spark Streaming application :
 
@@ -106,9 +109,9 @@ To run this project, you will need the following installed on your system:
 2. **Start Kafka in docker**:
    - using command line :
    ```bash
-   docker exec -it kafka1 /bin/bash
+   docker exec -it <kafka-container-id> /bin/bash
    ```
-   - using docker desktop :
+   - or using docker desktop :
      
      ![ docker desktop img](imgs/img5.png)
 
@@ -164,7 +167,27 @@ this is an img of the MongoDBCompass after Running the Kafka and Spark Streaming
 - the User can classify his owne text in `http://127.0.0.1:8000/classify` link.
 - in the Dashboard, There is a table contains tweets with labels.
 - in the Dashboard, There is 3 statistics or plots : labels rates - pie plot - bar plot.
-  
+
+
+## Team :
+
+- [Khattabi Idriss](https://github.com/drisskhattabi6) 
+- [Boufarhi Ayman](https://github.com/aymanboufarhi) 
+- [Abdelali IBN TABET](https://github.com/abd-ibn)
+
+## Supervised By : 
+
+- Prof. **Yasyn El Yusufi**
+
 ---
 
-By following the above instructions, you should be able to set up and run the real-time Twitter sentiment analysis project on your local machine. Happy coding!
+Abdelmalek Essaadi University - Faculty of Sciences and Technology of Tangier
+
+- Master: Artificial Intelligence and Data Science
+- Module: Big Data
+
+---
+
+- By following the above instructions, you should be able to set up and run the real-time Twitter sentiment analysis project on your local machine. Happy coding!
+
+- Feel free to explore the project and customize it according to your requirements. If you encounter any issues or have any questions, don't hesitate to reach out!

@@ -131,19 +131,24 @@ def classify(request) :
    if request.method == 'POST':
 
       text = request.POST.get('text')
-
+      print(len(text.strip()))
       if len(text.strip()) > 0 :
+         error = False
          from .consumer_user import classify_text
          prediction = classify_text(text)
       
       else : 
+         error = True
          error_text = "the Text is empty!! PLZ Enter Your Text."
 
    context = {
       "error" : error,
       "error_text" : error_text,
       "prediction" : prediction,
-      "text" : text
+      "text" : text,
+      "text_len" : len(text.strip())
    }
+
+   print(context)
    return render(request, 'dashboard/classify.html', context)
 
